@@ -9,6 +9,7 @@ window.onload=()=>{
 
 
 	spriteList.push(new Background());
+	spriteList.push(new Pikachu());
 	mainTick();
 }
 
