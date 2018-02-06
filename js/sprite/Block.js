@@ -4,7 +4,8 @@ class Block{
 		this.x=x
 		this.y=260
 		this.size=40;
-		this.color="green";
+		this.color="blue";
+		this.speed=1;
 	}
 	drawRect(){
 		ctx.fillStyle = this.color;
@@ -16,7 +17,13 @@ class Block{
 	
 	}
 
+	moveBlock(){
+		this.x=this.x-this.speed
+		
+	}
+
 	tick(){
+		this.moveBlock();
 		this.drawRect();
 	}
 
