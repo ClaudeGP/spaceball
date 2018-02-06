@@ -28,7 +28,7 @@ class Pikachu {
 			this.sprite.changeMinMaxInterval(1, 1);
 		}
 
-		this.sprite.tick(220, 120, ctx);
+		this.sprite.tick(50, 230, ctx);
 	}
 }
 			

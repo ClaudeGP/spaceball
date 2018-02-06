@@ -3,7 +3,7 @@ class Background{
 	{
 		this.x = 0;
 		this.y = 0;
-		this.src ="Spaceball - images/background.png"
+		this.src ="Spaceball - images/background2.png"
 	}
 
 
