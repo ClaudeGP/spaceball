@@ -8,21 +8,15 @@ class Pikachu {
 			let scale = 1.0;
 			let sprite = new TiledImage("Spaceball - images/pikachu.png", columnCount, rowCount, refreshDelay, loopColumns, scale, null);
 	}
-			
-	
-			sprite.changeRow(2);				
-			sprite.changeMinMaxInterval(1, 4); 	
 
-			let ctx = document.getElementById("canvas").getContext("2d");
+	tick() 
+	{
+		ctx.clearRect(0, 0, 500, 300);
 
-			tick();
+		sprite.tick(220, 120, ctx);
 
-			function tick() {
-				ctx.clearRect(0, 0, 500, 300);
-
-				sprite.tick(220, 120, ctx);
-
-				window.requestAnimationFrame(tick);
+		window.requestAnimationFrame(tick);
+	}
 }
 			
 			
