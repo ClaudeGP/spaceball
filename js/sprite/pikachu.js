@@ -7,6 +7,8 @@ class Pikachu {
 			let loopColumns = true; 			
 			let scale = 1.0;
 			let sprite = new TiledImage("Spaceball - images/pikachu.png", columnCount, rowCount, refreshDelay, loopColumns, scale, null);
+			sprite.changeRow(2);				
+			sprite.changeMinMaxInterval(1, 4);
 	}
 
 	tick() 
