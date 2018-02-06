@@ -10,6 +10,7 @@ class Pikachu {
 			this.sprite = new TiledImage("Spaceball - images/pikachu.png", this.columnCount, this.rowCount, this.refreshDelay, this.loopColumns, this.scale, null);
 			this.sprite.changeRow(2);				// One row per animation
 			this.sprite.changeMinMaxInterval(1, 4);
+			this.speed = 1;
 	}
 			
 	tick() 
@@ -17,10 +18,20 @@ class Pikachu {
 		if (leftPushed)
 		{
 			this.sprite.changeRow(1);
+			this.sprite.changeMinMaxInterval(1, 4);
+			if (this.speed > 0)
+			{
+				this.speed  = -speed
+			}
 		}
 		if (rightPushed)
 		{
 			this.sprite.changeRow(2);
+			this.sprite.changeMinMaxInterval(1, 4);
+			if (this.speed < 0)
+			{
+				this.speed  = -speed
+			}
 		}
 		if (spacePushed)
 		{
