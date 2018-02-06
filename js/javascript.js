@@ -1,6 +1,6 @@
 let positionSouris=null;
 let spriteList=[];
-
+let blockSize=40;
 
 window.onload=()=>{
 
@@ -10,6 +10,12 @@ window.onload=()=>{
 
 	spriteList.push(new Background());
 	spriteList.push(new Pikachu());
+
+	for (var i = 0 ; i < 150; i++) {
+		if (Math.random() > 0.05) {
+			spriteList.push(new Block( i * blockSize));
+		}
+	}
 	mainTick();
 }
 

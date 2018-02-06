@@ -13,7 +13,6 @@ class Pikachu {
 
 	tick() 
 	{
-		ctx.clearRect(0, 0, 500, 300);
 
 		this.sprite.tick(220, 120, ctx);
 
