@@ -1,6 +1,8 @@
 let positionSouris=null;
 let spriteList=[];
-
+var rightPushed = false;            
+var leftPushed = false;            
+var spacePushed = false; 
 
 window.onload=()=>{
 
@@ -9,6 +11,20 @@ window.onload=()=>{
 
 
 	spriteList.push(new Background());
+	spriteList.push(new Pikachu());
+
+	document.onkeydown = function (e) {
+		if (e.which == 65) leftPushed = true; 
+		else if (e.which == 68) rightPushed = true;
+		else if (e.which == 32) spacePushed = true; 
+	}
+	
+	document.onkeyup = function (e) {
+		if (e.which == 65) leftPushed = false;                
+		else if (e.which == 68) rightPushed = false;   
+		else if (e.which == 32) spacePushed = false;                
+	}
+
 	mainTick();
 }
 
