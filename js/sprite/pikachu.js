@@ -12,7 +12,6 @@ class Pikachu {
 			this.sprite.changeMinMaxInterval(1, 4);
 			this.speedX = 1;
 			this.speedY = -1;
-			this.speed = 1
 			this.x = 50;
 			this.y = 230;
 	}
@@ -24,9 +23,9 @@ class Pikachu {
 		{
 			this.sprite.changeRow(1);
 			this.sprite.changeMinMaxInterval(1, 4);
-			if (this.speed >= 0)
+			if (this.speedX >= 0)
 			{
-				this.speed  = -speedX
+				this.speedX  = -1
 			}
 		}
 		if (rightPushed)
@@ -35,21 +34,25 @@ class Pikachu {
 			this.sprite.changeMinMaxInterval(1, 4);
 			if (this.speed <= 0)
 			{
-				this.speed  = speedX
+				this.speedX  = 1
 			}
 		}
 		if (spacePushed)
 		{
 			this.sprite.changeMinMaxInterval(1, 1);
-			//this.y = this.y + this.speedY
+			if (this.y <= 200)
+			{
+				this.speedY  = 1
+			}
+			this.y = this.y + this.speedY
 		}
 		if (!leftPushed && !rightPushed && !spacePushed)
 		{
 			this.sprite.changeMinMaxInterval(1, 1);
-			this.speed = 0
+			this.speedX = 0
 		}
 
-		this.x = this.x + this.speed
+		this.x = this.x + this.speedX
 
 
 		this.sprite.tick(this.x, this.y, ctx);
