@@ -2,6 +2,10 @@ let positionSouris=null;
 let spriteList=[];
 let blockSize=40;
 
+var rightPushed = false;            
+var leftPushed = false;            
+var spacePushed = false; 
+
 window.onload=()=>{
 
 	let canvas =document.getElementById("canvas");
@@ -11,18 +15,32 @@ window.onload=()=>{
 	spriteList.push(new Background());
 	spriteList.push(new Pikachu());
 
+
 	for (var i = 0 ; i < 150; i++) {
 		if (Math.random() > 0.05) {
 			spriteList.push(new Block( i * blockSize));
 		}
 	}
+
+	document.onkeydown = function (e) {
+		if (e.which == 65) leftPushed = true; 
+		else if (e.which == 68) rightPushed = true;
+		else if (e.which == 32) spacePushed = true; 
+	}
+	
+	document.onkeyup = function (e) {
+		if (e.which == 65) leftPushed = false;                
+		else if (e.which == 68) rightPushed = false;   
+		else if (e.which == 32) spacePushed = false;                
+	}
+
+
 	mainTick();
 }
 
 
 function mainTick(){
 	ctx.clearRect(0,0,650,650);
-
 
 	for (let i = 0; i < spriteList.length; i++) {
 		const element = spriteList[i];
