@@ -15,6 +15,7 @@ class Pikachu {
 			
 	tick() 
 	{
+
 		if (leftPushed)
 		{
 			this.sprite.changeRow(1);
