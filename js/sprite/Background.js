@@ -15,7 +15,10 @@ class Background{
 			ctx.drawImage(bg,this.x,this.y)
 		}
 	}
-
+	mort()
+	{
+		return false
+	}
 	tick(){
 		this.drawBackground()
 

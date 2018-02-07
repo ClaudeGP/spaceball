@@ -6,6 +6,7 @@ let rightPushed = false;
 let leftPushed = false;            
 let spacePushed = false; 
 let bout = true;
+let timer = 0;
 
 window.onload=()=>{
 
@@ -18,6 +19,7 @@ window.onload=()=>{
 	spriteList.push(new Pikachu(80,"charmander"));
 	spriteList.push(new Pikachu(40,"squirtle"));
 	spriteList.push(new Pikachu(-5,"bulbasaur"));
+	spriteList.push(new ennemi());
 
 
 	for (var i = 0 ; i < 150; i++) {
@@ -45,11 +47,19 @@ window.onload=()=>{
 
 function mainTick(){
 	ctx.clearRect(0,0,650,650);
+	timer = timer+1
+	if(timer%100==0){
+		spriteList.push(new ennemi());
+	}
 
 	for (let i = 0; i < spriteList.length; i++) {
 		const element = spriteList[i];
 		
 		element.tick();
+		if(element.mort())
+		{
+			spriteList.splice(i,1)
+		}
 	}
 
 

@@ -17,6 +17,10 @@ class Pikachu {
 			this.y = 230;
 			this.air = false;
 	}
+	mort()
+	{
+		return false
+	}
 			
 	tick() 
 	{

@@ -17,6 +17,16 @@ class Block{
 	
 	}
 
+	mort(){
+		let mort = false
+		if(this.x<0)
+		{
+			mort = true
+
+		}
+		return false //temporaire
+	}
+
 	moveBlock(){
 		this.x=this.x-this.speed
 		
