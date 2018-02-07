@@ -23,7 +23,10 @@ class Block{
 	}
 
 	tick(){
-		this.moveBlock();
+		if(bout)
+		{
+			this.moveBlock();
+		}
 		this.drawRect();
 	}
 
